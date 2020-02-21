@@ -2,9 +2,9 @@ const express = require('express');
 const server = express();
 const projects = require('./data/project-model');
 
-server.use(express.json());
+// server.use('/api/projects', projects);
 
-server.use('data/001_resources.js', resources)
+server.use(express.json());
 
 server.get('/', (req, res) => {
     projects.find()

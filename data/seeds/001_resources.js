@@ -1,5 +1,5 @@
 exports.seed = function(knex) {
-  return knex('resources').insert([
+  return knex('resources').truncate().insert([
     {
       id: 1,
       name: 'Lambda Student',
@@ -9,7 +9,7 @@ exports.seed = function(knex) {
       id: 2,
       name: 'MacBook Pro #1',
       description: 'an overly expensive laptop computer'
-    }
+    },
     {
       id: 3,
       name: 'Any Windows PC or Laptop',

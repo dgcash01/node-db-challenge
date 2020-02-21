@@ -12,7 +12,7 @@ const getProjectActions = (projectId) => {
     });
 }
 
-const getProjectResources =(resourceID) => {
+const getProjectResources = (resourceID) => {
   return db('resources')
     .where({ resource_id: resourceID })
     .then(resources => {
@@ -26,7 +26,7 @@ const findById = (id) => {
     .first()
     .then(project => {
       if (project) {
-        return getProjectActions(id).then(actions => {
+        return getProjectResources(id).then(actions => {
           project.actions = actions;
           return project;
         })
